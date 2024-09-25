@@ -46,5 +46,11 @@ namespace gyakorlat2
         {
             ugyfelBindingSource.DataSource = _context.Ugyfel.ToList();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TermekKategoriaForm termekKategoriaForm = new TermekKategoriaForm();
+            termekKategoriaForm.ShowDialog();
+        }
     }
 }

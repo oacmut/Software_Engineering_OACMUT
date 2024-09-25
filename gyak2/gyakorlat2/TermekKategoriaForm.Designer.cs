@@ -28,39 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             treeViewKategoriak = new TreeView();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            contextMenuStripKategoria = new ContextMenuStrip(components);
+            újFőkategóriaToolStripMenuItem = new ToolStripMenuItem();
+            átnevezésToolStripMenuItem = new ToolStripMenuItem();
+            újAlkategóriaToolStripMenuItem = new ToolStripMenuItem();
+            törlésToolStripMenuItem = new ToolStripMenuItem();
+            frissítésToolStripMenuItem = new ToolStripMenuItem();
+            txtNev = new TextBox();
+            txtLeiras = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            contextMenuStripKategoria.SuspendLayout();
             SuspendLayout();
             // 
             // treeViewKategoriak
             // 
+            treeViewKategoriak.ContextMenuStrip = contextMenuStripKategoria;
             treeViewKategoriak.Location = new Point(12, 12);
             treeViewKategoriak.Name = "treeViewKategoriak";
             treeViewKategoriak.Size = new Size(409, 288);
             treeViewKategoriak.TabIndex = 0;
+            treeViewKategoriak.AfterSelect += treeViewKategoriak_AfterSelect;
             // 
-            // textBox1
+            // contextMenuStripKategoria
             // 
-            textBox1.Location = new Point(534, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(435, 23);
-            textBox1.TabIndex = 1;
+            contextMenuStripKategoria.Items.AddRange(new ToolStripItem[] { újFőkategóriaToolStripMenuItem, átnevezésToolStripMenuItem, újAlkategóriaToolStripMenuItem, törlésToolStripMenuItem, frissítésToolStripMenuItem });
+            contextMenuStripKategoria.Name = "contextMenuStripKategoria";
+            contextMenuStripKategoria.RenderMode = ToolStripRenderMode.Professional;
+            contextMenuStripKategoria.Size = new Size(149, 114);
             // 
-            // textBox2
+            // újFőkategóriaToolStripMenuItem
             // 
-            textBox2.Location = new Point(534, 41);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(435, 137);
-            textBox2.TabIndex = 2;
+            újFőkategóriaToolStripMenuItem.Name = "újFőkategóriaToolStripMenuItem";
+            újFőkategóriaToolStripMenuItem.Size = new Size(148, 22);
+            újFőkategóriaToolStripMenuItem.Text = "Új főkategória";
+            újFőkategóriaToolStripMenuItem.Click += újFőkategóriaToolStripMenuItem_Click;
+            // 
+            // átnevezésToolStripMenuItem
+            // 
+            átnevezésToolStripMenuItem.Name = "átnevezésToolStripMenuItem";
+            átnevezésToolStripMenuItem.Size = new Size(148, 22);
+            átnevezésToolStripMenuItem.Text = "Átnevezés";
+            // 
+            // újAlkategóriaToolStripMenuItem
+            // 
+            újAlkategóriaToolStripMenuItem.Name = "újAlkategóriaToolStripMenuItem";
+            újAlkategóriaToolStripMenuItem.Size = new Size(148, 22);
+            újAlkategóriaToolStripMenuItem.Text = "Új alkategória";
+            // 
+            // törlésToolStripMenuItem
+            // 
+            törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
+            törlésToolStripMenuItem.Size = new Size(148, 22);
+            törlésToolStripMenuItem.Text = "Törlés";
+            // 
+            // frissítésToolStripMenuItem
+            // 
+            frissítésToolStripMenuItem.Name = "frissítésToolStripMenuItem";
+            frissítésToolStripMenuItem.Size = new Size(148, 22);
+            frissítésToolStripMenuItem.Text = "Frissítés";
+            // 
+            // txtNev
+            // 
+            txtNev.Location = new Point(534, 12);
+            txtNev.Name = "txtNev";
+            txtNev.Size = new Size(435, 23);
+            txtNev.TabIndex = 1;
+            // 
+            // txtLeiras
+            // 
+            txtLeiras.Location = new Point(534, 41);
+            txtLeiras.Multiline = true;
+            txtLeiras.Name = "txtLeiras";
+            txtLeiras.Size = new Size(435, 137);
+            txtLeiras.TabIndex = 2;
             // 
             // button1
             // 
@@ -70,6 +117,7 @@
             button1.TabIndex = 3;
             button1.Text = "Új testvér kat.";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -116,33 +164,24 @@
             label2.TabIndex = 8;
             label2.Text = "Leírás";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(274, 132);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 9;
-            label3.Text = "label3";
-            // 
             // TermekKategoriaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 450);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtLeiras);
+            Controls.Add(txtNev);
             Controls.Add(treeViewKategoriak);
             Name = "TermekKategoriaForm";
             Text = "TermekKategoriaForm";
             Load += TermekKategoriaForm_Load;
+            contextMenuStripKategoria.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,14 +189,19 @@
         #endregion
 
         private TreeView treeViewKategoriak;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtNev;
+        private TextBox txtLeiras;
         private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private ContextMenuStrip contextMenuStripKategoria;
+        private ToolStripMenuItem átnevezésToolStripMenuItem;
+        private ToolStripMenuItem újFőkategóriaToolStripMenuItem;
+        private ToolStripMenuItem újAlkategóriaToolStripMenuItem;
+        private ToolStripMenuItem törlésToolStripMenuItem;
+        private ToolStripMenuItem frissítésToolStripMenuItem;
     }
 }
