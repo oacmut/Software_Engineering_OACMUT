@@ -53,7 +53,7 @@
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 354);
+            dataGridView1.Size = new Size(565, 354);
             dataGridView1.TabIndex = 0;
             // 
             // ugyfelIdDataGridViewTextBoxColumn
@@ -92,9 +92,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 389);
+            button1.Location = new Point(12, 372);
             button1.Name = "button1";
-            button1.Size = new Size(104, 23);
+            button1.Size = new Size(125, 23);
             button1.TabIndex = 1;
             button1.Text = "Új";
             button1.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(196, 389);
+            button2.Location = new Point(143, 372);
             button2.Name = "button2";
-            button2.Size = new Size(104, 23);
+            button2.Size = new Size(144, 23);
             button2.TabIndex = 2;
             button2.Text = "Törlés";
             button2.UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(411, 389);
+            button3.Location = new Point(293, 372);
             button3.Name = "button3";
-            button3.Size = new Size(104, 23);
+            button3.Size = new Size(136, 23);
             button3.TabIndex = 3;
             button3.Text = "Mentés";
             button3.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             // 
             // button4
             // 
-            button4.Location = new Point(627, 389);
+            button4.Location = new Point(435, 372);
             button4.Name = "button4";
-            button4.Size = new Size(104, 23);
+            button4.Size = new Size(142, 23);
             button4.TabIndex = 4;
             button4.Text = "Frissítés";
             button4.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(590, 450);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
