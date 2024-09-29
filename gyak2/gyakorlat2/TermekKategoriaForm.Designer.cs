@@ -50,10 +50,12 @@
             // treeViewKategoriak
             // 
             treeViewKategoriak.ContextMenuStrip = contextMenuStripKategoria;
+            treeViewKategoriak.LabelEdit = true;
             treeViewKategoriak.Location = new Point(12, 12);
             treeViewKategoriak.Name = "treeViewKategoriak";
             treeViewKategoriak.Size = new Size(409, 288);
             treeViewKategoriak.TabIndex = 0;
+            treeViewKategoriak.AfterLabelEdit += treeViewKategoriak_AfterLabelEdit;
             treeViewKategoriak.AfterSelect += treeViewKategoriak_AfterSelect;
             // 
             // contextMenuStripKategoria
@@ -75,24 +77,28 @@
             átnevezésToolStripMenuItem.Name = "átnevezésToolStripMenuItem";
             átnevezésToolStripMenuItem.Size = new Size(148, 22);
             átnevezésToolStripMenuItem.Text = "Átnevezés";
+            átnevezésToolStripMenuItem.Click += átnevezésToolStripMenuItem_Click;
             // 
             // újAlkategóriaToolStripMenuItem
             // 
             újAlkategóriaToolStripMenuItem.Name = "újAlkategóriaToolStripMenuItem";
             újAlkategóriaToolStripMenuItem.Size = new Size(148, 22);
             újAlkategóriaToolStripMenuItem.Text = "Új alkategória";
+            újAlkategóriaToolStripMenuItem.Click += újAlkategóriaToolStripMenuItem_Click;
             // 
             // törlésToolStripMenuItem
             // 
             törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
             törlésToolStripMenuItem.Size = new Size(148, 22);
             törlésToolStripMenuItem.Text = "Törlés";
+            törlésToolStripMenuItem.Click += törlésToolStripMenuItem_Click;
             // 
             // frissítésToolStripMenuItem
             // 
             frissítésToolStripMenuItem.Name = "frissítésToolStripMenuItem";
             frissítésToolStripMenuItem.Size = new Size(148, 22);
             frissítésToolStripMenuItem.Text = "Frissítés";
+            frissítésToolStripMenuItem.Click += frissítésToolStripMenuItem_Click;
             // 
             // txtNev
             // 

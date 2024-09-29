@@ -62,13 +62,66 @@ namespace gyakorlat2
         private void újFőkategóriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TermekKategoria kategoria = new TermekKategoria();
+            kategoria.Nev = "Új kategória";
+            kategoria.SzuloKategoriaId = null;
             _context.TermekKategoria.Add(kategoria);
             _context.SaveChanges();
-            TreeNode uj = new TreeNode();
+            TreeNode uj = new TreeNode(kategoria.Nev);
+            uj.Tag = kategoria;
+            treeViewKategoriak.Nodes.Add(uj);
+            treeViewKategoriak.SelectedNode = uj;
         }
 
         private void treeViewKategoriak_AfterSelect(object sender, TreeViewEventArgs e)
         {
+
+        }
+
+        private void átnevezésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeViewKategoriak.SelectedNode.BeginEdit();
+        }
+
+        private void treeViewKategoriak_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            if (e.Label != null && !string.IsNullOrEmpty(e.Label))
+            {
+                TermekKategoria kategoria = (TermekKategoria)e.Node.Tag;
+                kategoria.Nev = e.Label;
+                _context.SaveChanges();
+            }
+        }
+
+        private void frissítésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadKategoriak();
+        }
+
+        private void újAlkategóriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TermekKategoria termekKategoria = new TermekKategoria();
+            termekKategoria.Nev = "Új kategória";
+            termekKategoria.SzuloKategoriaId = ((TermekKategoria)treeViewKategoriak.SelectedNode.Tag).KategoriaId;
+            _context.TermekKategoria.Add(termekKategoria);
+            _context.SaveChanges();
+            TreeNode uj = new TreeNode(termekKategoria.Nev);
+            uj.Tag = termekKategoria;
+            treeViewKategoriak.SelectedNode.Nodes.Add(uj);
+        }
+
+        private void törlésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (treeViewKategoriak.SelectedNode.Nodes.Count == 0)
+            {
+                TermekKategoria kategoria = (TermekKategoria)treeViewKategoriak.SelectedNode.Tag;
+                _context.TermekKategoria.Remove(kategoria);
+                _context.SaveChanges();
+                treeViewKategoriak.SelectedNode.Remove();
+            }
+            else
+            {
+                MessageBox.Show("Nem törölhető kategória, mert van alkategóriája!");
+            }
 
         }
     }

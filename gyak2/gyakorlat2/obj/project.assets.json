@@ -3462,19 +3462,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oacmut\\.nuget\\packages\\": {}
+    "C:\\Users\\Borbély Balázs\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oacmut\\source\\repos\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\gyakorlat2.csproj",
+      "projectUniqueName": "C:\\Users\\Borbély Balázs\\Source\\Repos\\BorbelyBalazsCorvinus\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\gyakorlat2.csproj",
       "projectName": "gyakorlat2",
-      "projectPath": "C:\\Users\\oacmut\\source\\repos\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\gyakorlat2.csproj",
-      "packagesPath": "C:\\Users\\oacmut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oacmut\\source\\repos\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\obj\\",
+      "projectPath": "C:\\Users\\Borbély Balázs\\Source\\Repos\\BorbelyBalazsCorvinus\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\gyakorlat2.csproj",
+      "packagesPath": "C:\\Users\\Borbély Balázs\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Borbély Balázs\\Source\\Repos\\BorbelyBalazsCorvinus\\Software_Engineering_OACMUT\\gyak2\\gyakorlat2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\oacmut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Borbély Balázs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3536,7 +3541,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
