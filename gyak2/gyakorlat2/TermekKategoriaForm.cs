@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace gyakorlat2
 {
@@ -121,6 +123,52 @@ namespace gyakorlat2
             else
             {
                 MessageBox.Show("Nem törölhető kategória, mert van alkategóriája!");
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            XDocument xdoc = new XDocument();
+            XDeclaration xdecl = new XDeclaration("1.0", "utf-8", "yes");
+            xdoc.Declaration = xdecl;
+
+            var katlis = (from x in _context.TermekKategoria select x).ToList();
+
+            XElement Kategoriak = new XElement("Kategóriák");
+            xdoc.Add(Kategoriak);
+            var fokategoriak = from elem in _context.TermekKategoria
+                               where elem.SzuloKategoriaId == null
+                               select elem;
+
+
+            foreach (var elem in fokategoriak)
+            {
+                XElement FoKategoria = new XElement("Főkategória");
+                Kategoriak.Add(FoKategoria);
+                XAttribute attribute0 = new XAttribute($"KategoriaID", $"{elem.KategoriaId}");
+                FoKategoria.Add(attribute0);
+                XAttribute attribute00 = new XAttribute($"Nev", $"{elem.Nev}");
+                FoKategoria.Add(attribute00);
+
+                var alkategoriak = from x in katlis where x.SzuloKategoriaId == elem.KategoriaId select x;
+
+                foreach (var alkat in alkategoriak)
+                {
+
+                    XElement alKategoria = new XElement("Alkategória");
+                    FoKategoria.Add(alKategoria);
+                    XAttribute attribute1 = new XAttribute($"KategoriaID", $"{alkat.KategoriaId}");
+                    alKategoria.Add(attribute1);
+                    XAttribute attribute2 = new XAttribute($"Nev", $"{alkat.Nev}");
+                    alKategoria.Add(attribute2);
+                }
+
+            }
+            SaveFileDialog dialog = new SaveFileDialog();
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                xdoc.Save(dialog.FileName);
             }
 
         }

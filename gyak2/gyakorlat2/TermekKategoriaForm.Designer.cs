@@ -44,6 +44,7 @@
             button4 = new Button();
             label1 = new Label();
             label2 = new Label();
+            button5 = new Button();
             contextMenuStripKategoria.SuspendLayout();
             SuspendLayout();
             // 
@@ -170,11 +171,22 @@
             label2.TabIndex = 8;
             label2.Text = "Leírás";
             // 
+            // button5
+            // 
+            button5.Location = new Point(534, 235);
+            button5.Name = "button5";
+            button5.Size = new Size(126, 38);
+            button5.TabIndex = 9;
+            button5.Text = "XML-be export";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // TermekKategoriaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 450);
+            Controls.Add(button5);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button4);
@@ -209,5 +221,6 @@
         private ToolStripMenuItem újAlkategóriaToolStripMenuItem;
         private ToolStripMenuItem törlésToolStripMenuItem;
         private ToolStripMenuItem frissítésToolStripMenuItem;
+        private Button button5;
     }
 }
