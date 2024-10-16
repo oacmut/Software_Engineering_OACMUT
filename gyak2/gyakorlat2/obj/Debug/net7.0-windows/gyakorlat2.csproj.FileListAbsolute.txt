@@ -235,3 +235,4 @@ C:\Users\oacmut\Source\Repos\BorbelyBalazsCorvinus\Software_Engineering_OACMUT\g
 C:\Users\oacmut\Source\Repos\BorbelyBalazsCorvinus\Software_Engineering_OACMUT\gyak2\gyakorlat2\obj\Debug\net7.0-windows\ref\gyakorlat2.dll
 C:\Users\oacmut\Source\Repos\BorbelyBalazsCorvinus\Software_Engineering_OACMUT\gyak2\gyakorlat2\obj\Debug\net7.0-windows\gyakorlat2.UgyfelListaForm.resources
 C:\Users\oacmut\Source\Repos\BorbelyBalazsCorvinus\Software_Engineering_OACMUT\gyak2\gyakorlat2\obj\Debug\net7.0-windows\gyakorlat2.UjUgyfelForm.resources
+C:\Users\oacmut\Source\Repos\BorbelyBalazsCorvinus\Software_Engineering_OACMUT\gyak2\gyakorlat2\obj\Debug\net7.0-windows\gyakorlat2.RendelesForm.resources
